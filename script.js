@@ -9,6 +9,7 @@ async function loadProjects() {
 
     projectList.innerHTML = "";
     repos.forEach(repo => {
+      if (repo.name === "razonksunny.github.io") return;
       const card = document.createElement("div");
       card.className = "project-card";
       card.innerHTML = `
@@ -24,3 +25,4 @@ async function loadProjects() {
 }
 
 window.addEventListener("DOMContentLoaded", loadProjects);
+
