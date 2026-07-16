@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" class="light-mode">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Razon K Sunny — Developer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="webtitle.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- NOISE OVERLAY -->
+  <canvas class="noise-canvas" id="noise-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="logo-bracket">[</span>RKS<span class="logo-bracket">]</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="nav-status">
+        <span class="status-pulse"></span>
+        <span class="status-text">Available</span>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="toggle-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="toggle-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-line-anim"></span>
+        <span id="typing-text" class="typing-text"></span>
+        <span class="tag-cursor">|</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="hero-word" data-delay="0">Razon</span>
+        <span class="hero-word hero-outline" data-delay="150">K.</span>
+        <span class="hero-word" data-delay="300">Sunny</span>
+      </h1>
+
+      <p class="hero-desc">
+        Developer <span class="sep">·</span> Learner <span class="sep">·</span> Creator
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://github.com/razonksunny" target="_blank" class="btn-primary mag-btn">
+          <span>View GitHub</span><span class="btn-arrow">↗</span>
+        </a>
+        <a href="#projects" class="btn-ghost mag-btn">
+          <span>See Projects</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num" data-target="6">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="h-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-label">Languages</span>
+        </div>
+        <div class="h-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="100">0</span>
+          <span class="stat-label">% Open Source</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>scroll</span>
+    </div>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Python</span><span class="mdot">·</span>
+      <span>HTML5</span><span class="mdot">·</span>
+      <span>CSS3</span><span class="mdot">·</span>
+      <span>JavaScript</span><span class="mdot">·</span>
+      <span>Git</span><span class="mdot">·</span>
+      <span>GitHub</span><span class="mdot">·</span>
+      <span>VS Code</span><span class="mdot">·</span>
+      <span>Open Source</span><span class="mdot">·</span>
+      <span>Python</span><span class="mdot">·</span>
+      <span>HTML5</span><span class="mdot">·</span>
+      <span>CSS3</span><span class="mdot">·</span>
+      <span>JavaScript</span><span class="mdot">·</span>
+      <span>Git</span><span class="mdot">·</span>
+      <span>GitHub</span><span class="mdot">·</span>
+      <span>VS Code</span><span class="mdot">·</span>
+      <span>Open Source</span><span class="mdot">·</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <p class="section-label">01 / About</p>
+      <div class="about-grid">
+        <div class="about-left">
+          <h2 class="section-title">Building things<br/>that <em>matter.</em></h2>
+          <div class="avatar-wrap">
+            <div class="avatar-ring r1"></div>
+            <div class="avatar-ring r2"></div>
+            <div class="avatar-inner">RKS</div>
+          </div>
+        </div>
+        <div class="about-right">
+          <p>I'm a passionate developer who loves building practical and creative projects using Python, web technologies, and open-source tools.</p>
+          <p>I enjoy learning new things, solving problems, and contributing to the developer community — one commit at a time.</p>
+          <div class="about-meta">
+            <div class="meta-row"><span class="meta-key">// focus</span><span class="meta-val">Web + Python</span></div>
+            <div class="meta-row"><span class="meta-key">// status</span><span class="meta-val"><span class="pulse-dot"></span>Available</span></div>
+            <div class="meta-row"><span class="meta-key">// passion</span><span class="meta-val">Open Source</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-dark">
+    <div class="section-inner">
+      <p class="section-label">02 / Skills</p>
+      <h2 class="section-title">Tech Stack</h2>
+      <div class="skills-list">
+        <div class="skill-row" style="--i:0"><span class="sk-num">01</span><span class="sk-ico">🐍</span><span class="sk-name">Python</span><div class="sk-track"><div class="sk-bar" data-pct="85"></div></div><span class="sk-pct">85%</span></div>
+        <div class="skill-row" style="--i:1"><span class="sk-num">02</span><span class="sk-ico">🌐</span><span class="sk-name">HTML5</span><div class="sk-track"><div class="sk-bar" data-pct="90"></div></div><span class="sk-pct">90%</span></div>
+        <div class="skill-row" style="--i:2"><span class="sk-num">03</span><span class="sk-ico">🎨</span><span class="sk-name">CSS3</span><div class="sk-track"><div class="sk-bar" data-pct="80"></div></div><span class="sk-pct">80%</span></div>
+        <div class="skill-row" style="--i:3"><span class="sk-num">04</span><span class="sk-ico">⚡</span><span class="sk-name">JavaScript</span><div class="sk-track"><div class="sk-bar" data-pct="75"></div></div><span class="sk-pct">75%</span></div>
+        <div class="skill-row" style="--i:4"><span class="sk-num">05</span><span class="sk-ico">🌿</span><span class="sk-name">Git / GitHub</span><div class="sk-track"><div class="sk-bar" data-pct="88"></div></div><span class="sk-pct">88%</span></div>
+        <div class="skill-row" style="--i:5"><span class="sk-num">06</span><span class="sk-ico">💻</span><span class="sk-name">VS Code</span><div class="sk-track"><div class="sk-bar" data-pct="95"></div></div><span class="sk-pct">95%</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <p class="section-label">03 / Projects</p>
+      <h2 class="section-title">Recent Work</h2>
+      <div id="project-list" class="projects-grid">
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+        <div class="project-skeleton"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section id="stats" class="section section-dark">
+    <div class="section-inner">
+      <p class="section-label">04 / GitHub Activity</p>
+      <h2 class="section-title">By the Numbers</h2>
+      <div class="stats-grid">
+        <div class="stat-img-card">
+          <div class="stat-fallback" id="statsFallback">
+            <span class="fallback-icon">📊</span>
+            <span class="fallback-text">GitHub Stats</span>
+            <a href="https://github.com/razonksunny" target="_blank" class="fallback-link">View Profile ↗</a>
+          </div>
+          <img id="gh-stats" src="https://github-stats-extended.vercel.app/api?username=razonksunny&show_icons=true" alt="GitHub Stats" loading="lazy" onerror="this.style.display='none';document.getElementById('statsFallback').style.display='flex'" onload="this.style.display='block';document.getElementById('statsFallback').style.display='none'" />
+        </div>
+        <div class="stat-img-card">
+          <div class="stat-fallback" id="streakFallback">
+            <span class="fallback-icon">🔥</span>
+            <span class="fallback-text">GitHub Streak</span>
+            <a href="https://github.com/razonksunny" target="_blank" class="fallback-link">View Profile ↗</a>
+          </div>
+          <img id="gh-streak" src="https://github-readme-streak-stats.herokuapp.com/?user=razonksunny&theme=dark&background=111111&stroke=2a2a2a&ring=e8ff6b&fire=e8ff6b&currStreakLabel=e8ff6b&border_radius=10" alt="GitHub Streak" loading="lazy" onerror="this.style.display='none';document.getElementById('streakFallback').style.display='flex'" onload="this.style.display='block';document.getElementById('streakFallback').style.display='none'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <p class="section-label">05 / Contact</p>
+      <h2 class="contact-title">Let's build<br/><em>something great.</em></h2>
+      <div class="contact-links">
+        <a href="mailto:razonsunny06@gmail.com" class="contact-link">
+          <div class="cl-left"><span class="cl-num">01</span><div><span class="cl-label">Email</span><span class="cl-val">razonsunny06@gmail.com</span></div></div>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a href="https://github.com/razonksunny" target="_blank" class="contact-link">
+          <div class="cl-left"><span class="cl-num">02</span><div><span class="cl-label">GitHub</span><span class="cl-val">github.com/razonksunny</span></div></div>
+          <span class="cl-arrow">↗</span>
+        </a>
+        <a href="https://in.linkedin.com/in/razon-sunny-a443713bb" target="_blank" class="contact-link">
+          <div class="cl-left"><span class="cl-num">03</span><div><span class="cl-label">LinkedIn</span><span class="cl-val">Connect with me</span></div></div>
+          <span class="cl-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-logo">RKS</span>
+      <span class="footer-copy">© 2025 Razon K Sunny — Built with ❤️</span>
+      <a href="https://github.com/razonksunny" target="_blank" class="footer-gh">↗ GitHub</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
